@@ -189,12 +189,7 @@ if that value is non-nil."
   (clojure-mode-font-lock-setup)
 
   (run-mode-hooks 'clojure-mode-hook)
-  (run-hooks 'prog-mode-hook)
-
-  ;; Enable curly braces when paredit is enabled in clojure-mode-hook
-  (when (and (featurep 'paredit) paredit-mode (>= paredit-version 21))
-    (define-key clojure-mode-map "{" 'paredit-open-curly)
-    (define-key clojure-mode-map "}" 'paredit-close-curly)))
+  (run-hooks 'prog-mode-hook))
 
 (defun clojure-display-inferior-lisp-buffer ()
   "Display a buffer bound to `inferior-lisp-buffer'."
@@ -862,11 +857,11 @@ returned."
         (re-search-forward "[^\\]\\\(\\\"\\)")
         (match-beginning 1)))))
 
-(defun clojure-docstring-start+end-points ()
-  "Return the start and end points of the string at point as a cons."
-  (if (and (fboundp 'paredit-string-start+end-points) paredit-mode)
-      (paredit-string-start+end-points)
-    (cons (clojure-string-start) (clojure-string-end))))
+;; (defun clojure-docstring-start+end-points ()
+;;   "Return the start and end points of the string at point as a cons."
+;;   (if (and (fboundp 'paredit-string-start+end-points) paredit-mode)
+;;       (paredit-string-start+end-points)
+;;     (cons (clojure-string-start) (clojure-string-end))))
 
 (defun clojure-mark-string ()
   "Mark the string at point."
@@ -883,9 +878,9 @@ returned."
   paragraph start, so a paragraph that begins with four spaces will
   remain indented by four spaces after refilling."
   (interactive "P")
-  (if (and (fboundp 'paredit-in-string-p) paredit-mode)
-      (unless (paredit-in-string-p)
-        (error "Must be inside a string")))
+  ;; (if (and (fboundp 'paredit-in-string-p) paredit-mode)
+  ;;     (unless (paredit-in-string-p)
+  ;;       (error "Must be inside a string")))
   ;; Oddly, save-excursion doesn't do a good job of preserving point.
   ;; It's probably because we delete the string and then re-insert it.
   (let ((old-point (point)))

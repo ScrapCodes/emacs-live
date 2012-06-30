@@ -28,7 +28,7 @@
 
 (add-hook 'clojure-mode-hook
           (lambda ()
-            (enable-paredit-mode)
+            ;; (enable-paredit-mode)
             (rainbow-delimiters-mode)
             (add-to-list 'ac-sources 'ac-source-yasnippet)
             (setq buffer-save-without-query t)))
@@ -56,5 +56,5 @@
                               auto-mode-alist))
 
 (dolist (x '(scheme emacs-lisp lisp))
-  (add-hook (intern (concat (symbol-name x) "-mode-hook")) 'enable-paredit-mode)
+  ;; (add-hook (intern (concat (symbol-name x) "-mode-hook")) 'enable-paredit-mode)
   (add-hook (intern (concat (symbol-name x) "-mode-hook")) 'rainbow-delimiters-mode))
