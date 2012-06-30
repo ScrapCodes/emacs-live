@@ -2,11 +2,13 @@
 (require 'color-theme)
 
 (global-hl-line-mode 1)
-(set-face-background 'hl-line "#333333")
+(set-face-background 'hl-line "#68bdc7")
 
 ;; use blackbored colour theme
 (load-file (concat (live-pack-lib-dir) "cyberpunk.el"))
 (load-file (concat (live-pack-lib-dir) "gandalf.el"))
-(color-theme-cyberpunk)
+(load-file (concat (live-pack-lib-dir) "shyam.el"))
 
-(set-cursor-color "yellow")
+
+(color-theme-shyam)
+;;(color-theme-gandalf)

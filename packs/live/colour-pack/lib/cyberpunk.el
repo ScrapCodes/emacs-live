@@ -50,7 +50,7 @@
      (mode-line ((t (:background "gray10" :foreground "#4c83ff"))))
      (mode-line-inactive ((t (:background "gray10" :foreground "gray30"))))
 
-     (highlight ((t (:background "DarkOrange"))))
+     (highlight ((t (:background "#"))))
      (isearch ((t (:background "deep pink" :foreground "black"))))
      (isearch-fail ((t (:background "red4"))))
      (lazy-highlight ((t (:background "yellow" :foreground "black"))))
