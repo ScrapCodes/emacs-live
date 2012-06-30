@@ -131,10 +131,10 @@ functions and switching buffers.
 
 #### Colour
 
-Colour highlighting in two flavours - cyberpunk and gandalf. User
-`color-theme-cyberpunk` and `color-theme-gandalf` to switch between the
-two themes. Currently cyberpunk has seen more love - patch requests
-accepted for appropriate improvements to Gandalf.
+Colour highlighting in two flavours - cyberpunk, gandalf, shyam. User
+`color-theme-cyberpunk`,`color-theme-gandalf`, `color-theme-shyam` to switch between themes. 
+Currently cyberpunk has seen more love - patch requests
+accepted for appropriate improvements. Default theme is set to shyam.
 
 #### Clojure
 
