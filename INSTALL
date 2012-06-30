@@ -1,0 +1,5 @@
+For impatient.
+rename emacs-live dir to ~/.emacs.d And remove (and backup!) all your existing ~/.emacs, ~/.emacs.d and ~/.emacs.el
+
+Read getting started help here.
+https://github.com/ScrapCodes/emacs-live/blob/master/README.md#getting-started
