@@ -57,29 +57,21 @@ in battle against the evil friction of poor text editor workflows.
 
 Emacs Live is only compatible with Emacs 24 and above.
 
-### Easy Install
-
-If you're the kind of shoot-from-the-hip brogrammer that doesn't mind
-executing random scripts from the interwebs, then the easiest way to
-install Emacs Live is to run the following which will safely preserve
-any Emacs configs you already have:
-
-    bash <(curl -fsSL https://raw.github.com/overtone/emacs-live/master/installer/install-emacs-live.sh)
-
-Note: you should always read through random scripts before executing
-them!
-
 ### Getting Started
-
-The (only ever-so-slightly) more involved way to install is to follow
-these steps:
 
 1. Move aside `~/.emacs`, `~/.emacs.el` or `~/.emacs.d` if they
    currently exist.
 2. Download the zip bundle (or clone the repository with git) and move
    and rename to `~/.emacs.d`
-3. Launch Emacs version 24+
-4. Live code your hat off!
+3. Launch Emacs version 24+. If only everything works ! or [how-to](#troubleshoot)
+4. Now you may copy your old `~/.emacs` (which was moved aside in Step 1)  file to `~/.emacs.d/config/emacs.el`.
+5. Live code your hat off!
+
+### Troubleshoot
+1. Disabling a few packs might help. [how-to](#loading-packs)
+2. Incase above does not help open `~/.emacs.d/init.el` and goto `;;default live packs`, try commenting packs and see which ones the culprit by trial and error.
+3. Incase nothing help I had say restore your original `~/.emacs`, `~/.emacs.el`, or `~/.emacs.d`.
+4. And in any of the above cases feel free to raise issue(s).
 
 ### Clojure Hacking
 
