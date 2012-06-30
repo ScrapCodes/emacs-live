@@ -15,10 +15,8 @@
 (live-load-config-file "window-number-conf.el")
 (live-load-config-file "recentf-conf.el")
 (live-load-config-file "elisp-slime-nav-conf.el")
-;(live-load-config-file "popwin-conf.el")
 (live-load-config-file "shell-conf.el")
 (live-load-config-file "spelling-conf.el")
-;(live-load-config-file "lisp-conf.el")
+(live-load-config-file "lisp-conf.el")
 
-(when (eq system-type 'darwin)
-  (live-load-config-file "osx.el"))
+(live-load-config-file "osx.el")
