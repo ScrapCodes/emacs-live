@@ -15,13 +15,13 @@
   ;; If there is more than one, they won't work right.
  )
 ;;Added by Apurba
-(setq default-frame-alist
-      '((width . 120) (height . 80)
-        (cursor-color . "black")
-        (cursor-type . box)
-        (foreground-color . "black")
-        (background-color . "white")))
-;        (font . "-*-Courier-normal-r-*-*-13-*-*-*-c-*-iso8859-1")))
+;; (setq default-frame-alist
+;;       '((width . 120) (height . 80)
+;;         (cursor-color . "black")
+;;         (cursor-type . box)
+;;         (foreground-color . "black")
+;;         (background-color . "white")))
+;; ;        (font . "-*-Courier-normal-r-*-*-13-*-*-*-c-*-iso8859-1")))
 
 ;(setq initial-frame-alist '((top . 10) (left . 30)))
 
@@ -64,7 +64,7 @@
      (setq rest (cdr rest)))
    (setq time (time-now)))
 
-(global-set-key [f4] 'bubble-buffer) 
+(global-set-key [f4] 'bubble-buffer)
 
 
 (defun geosoft-kill-buffer ()
@@ -73,10 +73,10 @@
    (kill-buffer (buffer-name))
    (set-name))
 
-(global-set-key [C-delete] 'geosoft-kill-buffer) 
+(global-set-key [C-delete] 'geosoft-kill-buffer)
 
 ;;key for going to line
-(global-set-key "\C-l" 'goto-line) ; [Ctrl]-[L] 
+(global-set-key "\C-l" 'goto-line) ; [Ctrl]-[L]
 
 ;; makes the tool bar disappear
 (tool-bar-mode 0)
@@ -114,7 +114,7 @@
   (message "Filename is %s" buffer-file-truename)
 )
 
-(global-set-key "\M-\r" 'show-current-filename) 
+(global-set-key "\M-\r" 'show-current-filename)
 
 ;; added for the nasty autosave and bakcup litter
 ;; Put autosave files (ie #foo#) and backup files (ie foo~) in ~/.emacs.d/.
@@ -124,11 +124,11 @@
 ;; Reload file
 (defun revert-buffer-no-confirm ()
   "Revert buffer without confirmation."
-  (interactive) 
+  (interactive)
   (revert-buffer t t)
   (ecb-rebuild-methods-buffer)
 )
-(global-set-key [f5] 'revert-buffer-no-confirm) 
+(global-set-key [f5] 'revert-buffer-no-confirm)
 
 (add-to-list 'load-path "~/emcust/elisp")
 (add-to-list 'auto-mode-alist '("\\.js\\'" . javascript-mode))
@@ -172,7 +172,7 @@
 (goto-char (abs pos))))))
 (setq undos (cdr undos))))))
 
-(global-set-key (kbd "C-q") 'goto-last-edit-point) 
+(global-set-key (kbd "C-q") 'goto-last-edit-point)
 
 ;; Added for org mode
 (add-to-list 'auto-mode-alist '("\\.aporg\\'" . org-mode))
@@ -196,10 +196,9 @@
 (defun toggle-fullscreen ()
   (interactive)
   (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
-	    		 '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0))
+                         '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0))
   (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
-	    		 '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0))
-)
+                         '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0)))
 
 ;;(toggle-fullscreen)
 
@@ -211,7 +210,7 @@
 (global-set-key "\C-o" 'ecb-goto-window-methods)
 
 ;; AN adding class search
-(defun custom-find-java-class(pattern) 
+(defun custom-find-java-class(pattern)
     "Open class file"
     (interactive "s className ")
     ;; (find-tag-regexp (concat "class " pattern))
