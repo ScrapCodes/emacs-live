@@ -1,5 +1,6 @@
 ;; Shyam Colour Theme
 ;;
+;;
 
 (require 'color-theme)
 
@@ -42,8 +43,7 @@
      (gui-element ((t (:background "#333333" :foreground "#96CBFE"))))
      (region ((t ( :background "#9d9d9d"))))
      (mode-line ((t (:background "#344764" :foreground "white"))))
-     (mode-line-inactive ((t (:background "gray10" :foreground "gray30"))))
-
+     (mode-line-inactive ((t (:background "grey" :foreground "gray30"))))
      (highlight ((t (:background "#c7688e"))))
      (isearch ((t (:background "deep pink" :foreground "black"))))
      (isearch-fail ((t (:background "red4"))))
@@ -110,7 +110,6 @@
 
 
 (custom-set-faces
-
- ;;nXhtml colours
+;;nXhtml colours
+ '(mumamo-background-chunk-submode1 ((((class color) (background dark)) (:background "black"))))
  '(mumamo-background-chunk-major ((((class color) (background dark)) (:background "black")))))
-'(mumamo-background-chunk-submode1 ((((class color) (background dark)) (:background "black"))))
