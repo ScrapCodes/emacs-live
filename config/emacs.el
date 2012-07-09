@@ -15,14 +15,22 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  )
+
+;;Works only if emacs is ./configure --with-x-toolkit --with-xft
+;;And http://www.emacswiki.org/cgi-bin/wiki/XftGnuEmacs for further instructions.
+(set-default-font "DejaVu Sans Mono-9")
+
 ;;Added by Apurba
-;; (setq default-frame-alist
-;;       '((width . 120) (height . 80)
+ ;; (setq default-frame-alist
+ ;;       '((width . 160) (height . 100)
 ;;         (cursor-color . "black")
 ;;         (cursor-type . box)
 ;;         (foreground-color . "black")
 ;;         (background-color . "white")))
-;; ;        (font . "-*-Courier-normal-r-*-*-13-*-*-*-c-*-iso8859-1")))
+;;          (font . "-*-courier-normal-r-*--13-*-*-*-c-*-iso8859-1")))
+;; (font . "-*-*-ariel-r-extended--*-*-*-*-p-60-iso8859-1")))
+
+
 
 ;(setq initial-frame-alist '((top . 10) (left . 30)))
 
@@ -89,9 +97,9 @@
 
 
 ;; Added to remove the menu bar
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+;; (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+;; (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+;; (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
 ;; make emacs use the clipboard
 (setq x-select-enable-clipboard t)
@@ -100,13 +108,13 @@
 
 ;;enable kill all direds
 (defun kill-all-dired()
- (dolist(buffer (buffer-list))
-             (set-buffer buffer)
-             (when (equal major-mode 'dired-mode)
-               (kill-buffer buffer)
-             )
- )
-)
+  (dolist(buffer (buffer-list))
+    (set-buffer buffer)
+    (when (equal major-mode 'dired-mode)
+      (kill-buffer buffer)
+      )
+    )
+  )
 
 ;; Get the current filename
 (defun show-current-filename()
@@ -131,9 +139,6 @@
 )
 (global-set-key [f5] 'revert-buffer-no-confirm)
 
-(add-to-list 'load-path "~/emcust/elisp")
-(add-to-list 'auto-mode-alist '("\\.js\\'" . javascript-mode))
-(autoload 'javascript-mode "javascript" nil t)
 
 ;; delete line no kill
 (defun delete-line()
