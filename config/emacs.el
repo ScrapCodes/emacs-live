@@ -226,3 +226,5 @@
 (global-set-key (kbd "C-S-t") 'custom-find-java-class)
 
 (global-set-key [f6] 'ecb-minor-mode)
+
+(server-start)
