@@ -2,7 +2,7 @@
 (require 'color-theme)
 
 (global-hl-line-mode 1)
-(set-face-background 'hl-line "#68bdc7")
+(set-face-background 'hl-line "#c6d4ea")
 
 ;; use blackbored colour theme
 (load-file (concat (live-pack-lib-dir) "cyberpunk.el"))
