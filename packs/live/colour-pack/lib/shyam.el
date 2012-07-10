@@ -41,7 +41,7 @@
      (font-lock-warning-face ((t (:bold t :foreground "red4"))))
 
      (gui-element ((t (:background "#333333" :foreground "#96CBFE"))))
-     (region ((t ( :background "#9d9d9d"))))
+     (region ((t ( :background "#cac6ea"))))
      (mode-line ((t (:background "#344764" :foreground "white"))))
      (mode-line-inactive ((t (:background "grey" :foreground "gray30"))))
      (highlight ((t (:background "#c7688e"))))
@@ -49,7 +49,7 @@
      (isearch-fail ((t (:background "red4"))))
      (lazy-highlight ((t (:background "deep pink" :foreground "black"))))
      (query-replace ((t (:background "#333333"))))
-     ;(highlight ((t (:background "#68bdc7"))))
+
      (Highline-face ((t (:background "#7268c7" :foreground "black"))))
      (italic ((t (nil))))
      (left-margin ((t (nil))))
@@ -59,15 +59,8 @@
      (vertical-border ((t (:background "black" :foreground "#333333"))))
      (zmacs-region ((t (:background "snow" :foreground "ble"))))
 
-     (diff-added ((t (:foreground "green"))))
+     (diff-added ((t (:foreground "dark green"))))
      (diff-removed ((t (:foreground "red"))))
-
-     (magit-diff-add ((t (:foreground "green"))))
-     (magit-diff-del ((t (:foreground "red"))))
-     (magit-item-highlight ((t (:background "gray15"))))
-     (magit-section-title ((t (:foreground "deep pink"))))
-     (magit-diff-hunk-header ((t (:foreground "orange"))))
-     (magit-branch ((t (:foreground "gold"))))
 
      (eval-sexp-fu-flash ((t (:background "grey15" :foreground "DeepPink3"))))
 
@@ -103,7 +96,7 @@
      (rainbow-delimiters-depth-9-face ((t (:foreground "turquoise"))))
      (rainbow-delimiters-unmatched-face ((t (:foreground "red4"))))
 
-     (vhl/default-face ((t (:background "#333333"))))
+     (vhl/default-face ((t (:background "#c9c9e8"))))
      (undo-tree-visualizer-active-branch-face ((t (:foreground "deep pink" :background "black"))))
      (hl-sexp-face ((t (:background "grey9")))))))
 
