@@ -220,9 +220,8 @@
     "Open class file"
     (interactive "s className ")
     ;; (find-tag-regexp (concat "class " pattern))
-    (find-tag-regexp (concat "\\(class\\|interface\\) " pattern))
+    (find-tag-regexp (concat (concat "\\(class\\|interface\\).*\\b" pattern) "\\b"  )  ))
 
-)
 (global-set-key (kbd "C-S-t") 'custom-find-java-class)
 
 (global-set-key [f6] 'ecb-minor-mode)

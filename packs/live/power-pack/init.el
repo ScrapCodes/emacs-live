@@ -11,3 +11,4 @@
 (live-load-config-file "highlight-tail-conf.el")
 (live-load-config-file "gist-conf.el")
 (live-load-config-file "bash-completion-conf.el")
+(live-load-config-file "ecb-config.el")
