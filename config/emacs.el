@@ -215,6 +215,15 @@
 
 (global-set-key "\C-o" 'ecb-goto-window-methods)
 
+;;http://www.emacswiki.org/TextMate
+(defun ido-find-file-in-tag-files ()
+      (interactive)
+      (save-excursion
+        (let ((enable-recursive-minibuffers t)) (visit-tags-table-buffer))
+        (find-file (expand-file-name
+                    (ido-completing-read "Project file: "
+                                         (tags-table-files) nil t)))))
+
 ;; AN adding class search
 (defun custom-find-java-class(pattern)
     "Open class file"
@@ -222,7 +231,7 @@
     ;; (find-tag-regexp (concat "class " pattern))
     (find-tag-regexp (concat (concat "\\(class\\|interface\\).*\\b" pattern) "\\b"  )  ))
 
-(global-set-key (kbd "C-S-t") 'custom-find-java-class)
+(global-set-key (kbd "C-S-t") 'ido-find-file-in-tag-files)
 
 (global-set-key [f6] 'ecb-minor-mode)
 
