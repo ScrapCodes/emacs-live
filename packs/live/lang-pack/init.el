@@ -9,3 +9,4 @@
 (live-load-config-file "markdown-conf.el")
 (live-load-config-file "supercollider-conf.el")
 (live-load-config-file "actionscript-conf.el")
+(live-load-config-file "ensime-conf.el")

@@ -65,7 +65,7 @@
 
 ;;remove all trailing whitespace and trailing blank lines before
 ;;saving the file
-(add-hook 'before-save-hook 'whitespace-cleanup)
+;; (add-hook 'before-save-hook 'whitespace-cleanup)
 
 ;; savehist keeps track of some history
 (setq savehist-additional-variables

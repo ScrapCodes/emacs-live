@@ -37,6 +37,7 @@
 ;Terminal character set fix for linux
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
+(autoload 'dirtree "dirtree" "Add directory to tree view" t)
 ;;http://nullprogram.com/blog/2012/08/01/
 (add-to-list 'file-name-handler-alist '("\\.class$" . javap-handler))
 
@@ -281,3 +282,5 @@
 (global-set-key [M-right] 'windmove-right)        ; move to right window
 (global-set-key [M-up] 'windmove-up)              ; move to upper window
 (global-set-key [M-down] 'windmove-down)          ; move to downer window
+
+(setq exec-path (append exec-path (list "/home/prashant/sbt/bin" )))
