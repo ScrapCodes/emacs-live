@@ -37,6 +37,35 @@
 ;Terminal character set fix for linux
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
+;;http://nullprogram.com/blog/2012/08/01/
+(add-to-list 'file-name-handler-alist '("\\.class$" . javap-handler))
+
+(defun javap-handler (op &rest args)
+  "Handle .class files by putting the output of javap in the buffer."
+  (cond
+   ((eq op 'get-file-buffer)
+    (let ((file (car args)))
+      (with-current-buffer (create-file-buffer file)
+        (call-process "javap" nil (current-buffer) nil "-verbose"
+                      "-classpath" (file-name-directory file)
+                      (file-name-sans-extension
+                       (file-name-nondirectory file)))
+        (setq buffer-file-name file)
+        (setq buffer-read-only t)
+        (set-buffer-modified-p nil)
+        (goto-char (point-min))
+        (java-mode)
+        (current-buffer))))
+   ((javap-handler-real op args))))
+
+(defun javap-handler-real (operation args)
+  "Run the real handler without the javap handler installed."
+  (let ((inhibit-file-name-handlers
+         (cons 'javap-handler
+               (and (eq inhibit-file-name-operation operation)
+                    inhibit-file-name-handlers)))
+        (inhibit-file-name-operation operation))
+    (apply operation args)))
 
 (setq inhibit-startup-message   t)   ; Don't want any startup message
 (setq make-backup-files         nil) ; Don't want any backup files
@@ -106,15 +135,19 @@
 (setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 
 
-;;enable kill all direds
-(defun kill-all-dired()
-  (dolist(buffer (buffer-list))
-    (set-buffer buffer)
-    (when (equal major-mode 'dired-mode)
-      (kill-buffer buffer)
-      )
-    )
-  )
+(defun kill-all-dired-buffers()
+      "Kill all dired buffers."
+      (interactive)
+      (save-excursion
+        (let((count 0))
+          (dolist(buffer (buffer-list))
+            (set-buffer buffer)
+            (when (equal major-mode 'dired-mode)
+              (setq count (1+ count))
+              (kill-buffer buffer)))
+          (message "Killed %i dired buffer(s)." count ))))
+
+(global-set-key (kbd "C-S-d") 'kill-all-dired-buffers)
 
 ;; Get the current filename
 (defun show-current-filename()
@@ -231,8 +264,20 @@
     ;; (find-tag-regexp (concat "class " pattern))
     (find-tag-regexp (concat (concat "\\(class\\|interface\\).*\\b" pattern) "\\b"  )  ))
 
+(defun custom-find-scala-class(pattern)
+    "Open class file"
+    (interactive "s className ")
+    ;; (find-tag-regexp (concat "class " pattern))
+    (find-tag-regexp (concat (concat "\\(class\\|object\\|\\trait\\).*\\b" pattern) "\\b"  ) ))
+
+
 (global-set-key (kbd "C-S-t") 'ido-find-file-in-tag-files)
 
 (global-set-key [f6] 'ecb-minor-mode)
 
 (server-start)
+
+(global-set-key [M-left] 'windmove-left)          ; move to left windnow
+(global-set-key [M-right] 'windmove-right)        ; move to right window
+(global-set-key [M-up] 'windmove-up)              ; move to upper window
+(global-set-key [M-down] 'windmove-down)          ; move to downer window
